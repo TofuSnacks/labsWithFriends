@@ -1,6 +1,8 @@
 /* Mental Model Exercises
 ** Best Friends Jarren and Houfu /*
 
+/* Expression Evaluation */
+
    3 + 5 - 2
 -->  8   - 2 [evaluated 3 + 5]
 -->     6    [evaluated 8 - 2]
@@ -21,3 +23,127 @@
 --> 1.0 +    0.5    [evaluated 5.0 / 10.0]
 -->       1.5       [evaluated 1.0 + 0.5]
 
+    1 + 5.0 / 10.0
+--> 1 + 0.5        [evaluated 5.0 / 10.0]
+-->       1.5      [evaluated 1 + 0.5]
+
+    1.0 + 5 / 10
+--> 1.0 + 0      [evaluated 5 / 10]
+--> 1.0          [evaluated 1.0 + 0]
+
+    1 + 5.0 / 10
+--> 1 + 0.5        [evaluated 5.0 / 10]
+-->       1.5      [evaluated 1 + 0.5]
+
+/* Stack Management */
+
+void f1(void) {
+     printf("0");
+     // Point (B, D)
+}
+
+void f2(void) {
+     printf("1");
+     // Point (C)
+     f1();
+     printf("2");
+}
+
+int main(void) {
+    // Point (A)
+    printf("3");
+    f1();
+    f2();
+    // Point (E)
+}
+
+Program Counter: 53
+
+The Stack
+=========
+--- main
+    (empty)
+
+Program Counter: 55
+
+The Stack        Output
+=========        ======
+--- main         3
+    (empty)
+
+Program Counter: 41
+
+The Stack        Output
+=========        ======
+--- f1
+    (empty)
+--- main         3
+    (empty)
+
+Program Counter: 56
+
+The Stack        Output
+=========        ======
+--- f1           0
+    (empty)
+--- main         3
+    (empty)
+
+Program Counter: 46
+
+The Stack        Output
+=========        ======
+--- f2
+    (empty)
+--- f1           0
+    (empty)
+--- main         3
+    (empty)
+
+Program Counter: 48
+
+The Stack        Output
+=========        ======
+--- f2           1
+    (empty)
+--- f1           0
+    (empty)
+--- main         3
+    (empty)
+
+Program Counter: 41
+
+The Stack        Output
+=========        ======
+--- f1
+    (empty)
+--- f2           1
+    (empty)
+--- f1           0
+    (empty)
+--- main         3
+    (empty)
+
+Program Counter: 49
+
+The Stack        Output
+=========        ======
+--- f1           0
+    (empty)
+--- f2           1
+    (empty)
+--- f1           0
+    (empty)
+--- main         3
+    (empty)
+
+Program Counter: 58
+
+The Stack        Output
+=========        ======
+--- main         2
+    (empty)
+
+
+/* We will not be doing the second example to maintain our sanity.
+** Otherwise, this lab exercise is complete. */
