@@ -1,0 +1,23 @@
+/* Mental Model Exercises
+** Best Friends Jarren and Houfu /*
+
+   3 + 5 - 2
+-->  8   - 2 [evaluated 3 + 5]
+-->     6    [evaluated 8 - 2]
+
+    6 - 10 / (2 + 3)
+--> 6 - 10 /    5   [evaluated (2 + 3)]
+-->    6   -   2    [evaluated (10 / 5)]
+-->        4        [evaluated 6 -2]
+
+1 + 5 % 3 * 2
+--> IDK BRUH
+
+    1 + 5 / 10
+--> 1 +   0   [evaluated 5 / 10]
+-->     1     [evaluated 1 + 0]
+
+    1.0 + 5.0 / 10.0
+--> 1.0 +    0.5    [evaluated 5.0 / 10.0]
+-->       1.5       [evaluated 1.0 + 0.5]
+
